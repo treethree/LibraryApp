@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Book" representedClassName="Book" syncable="YES" codeGenerationType="class">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pages" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="publisher" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="dept" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookDepartment" inverseName="books" inverseEntity="BookDepartment" syncable="YES"/>
+    </entity>
+    <entity name="BookDepartment" representedClassName="BookDepartment" syncable="YES" codeGenerationType="class">
+        <attribute name="bookNums" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="depId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="depLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="depName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Book" inverseName="dept" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BookDepartment" positionX="-61.86328125" positionY="7.03125" width="128" height="120"/>
+        <element name="Book" positionX="161.94140625" positionY="9.3515625" width="128" height="120"/>
+    </elements>
+</model>
